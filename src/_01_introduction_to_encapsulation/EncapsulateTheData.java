@@ -1,5 +1,9 @@
 package _01_introduction_to_encapsulation;
 
+import static org.junit.Assert.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
 /*
  * Encapsulation is a way of protecting the data in a class from being
  * unintentionally altered from another class.
@@ -9,7 +13,7 @@ package _01_introduction_to_encapsulation;
  * 1. Make the member variable private (or protected)
  * 
  * 2. Make a getter and setter method (accessor and mutator) for the variable.
- * 
+ *
  * 3. Add restrictions to the setter method so the member variable cannot be 
  * 	  adversely altered
  * 
@@ -37,8 +41,38 @@ public class EncapsulateTheData {
 			itemsReceived = _itemsRecieved;
 		}
 	}
-	
-	public static void main(String[] args) {
-		
+	public int getItemsReceived() {
+		return itemsReceived;
+	}
+	//degreesTurned//
+	public float getDegreesTurned() {
+		return degreesTurned;
+	}
+	public void setDegreesTurned(float degreesTurned) {
+		if(degreesTurned >= 0 && degreesTurned <= 360) {
+			this.degreesTurned = degreesTurned;
+		}
+	}
+	//nomenclature
+	public String getNomenclature() {
+		return nomenclature;
+	}
+	public void setNomenclature(String nomenclature) {
+		if(nomenclature.equals("")) {
+		this.nomenclature = " ";
+		}
+		else {
+		this.nomenclature = nomenclature;
+		}
+	}
+	//memberObj
+	public Object getMemberObj() {
+		return memberObj;
+	}
+	public void setMemberObj(Object memberObj) {
+		if(memberObj.getClass().equals(String.class)){
+			memberObj = new Object();
+		}
+		this.memberObj = memberObj;
 	}
 }
