@@ -17,13 +17,22 @@ public class testEncapsulate {
 		etd.setDegreesTurned(999);
 		assertNotEquals(999, etd.getDegreesTurned());
 	}
-	@Test public void testNomenclature() {
-		
+	@Test 
+	public void testNomenclature() {
+		etd.setNomenclature("");
+		assertEquals(" ", etd.getNomenclature());
 	}
-}
+
+	@Test
+	public void testMemberObj() {
+		String s = "e";
+		etd.setMemberObj(s);
+		assertNotEquals(s, etd.getMemberObj());
+	}
 class runner{
-	static testEncapsulate t = new testEncapsulate();
-	public static void main(String[] args) {
+	final testEncapsulate t = new testEncapsulate();
+	public void main(String[] args) {
 		 t.testItemsRecieved();
 	 }
+}
 }
