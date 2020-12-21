@@ -31,10 +31,12 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    	 window.pack();
    	 window.setVisible(true);
-   	polymorphs.add(new BluePolymorph(50, 50));
+   	polymorphs.add(new imageMorph(55,55));
+   	 polymorphs.add(new BluePolymorph(50, 50));
 	 polymorphs.add(new RedMorph(25, 25));
 	 polymorphs.add(new MovingMorph(75,75));
-     
+     polymorphs.add(new mousePolymorph(25,25));
+     polymorphs.add(new buttonMorph(125,125));
    	 timer = new Timer(1000 / 30, this);
    	 timer.start();
     }
@@ -45,7 +47,7 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 g.fillRect(0, 0, 500, 500);
    	 for(Polymorph p : polymorphs) {
    		 p.draw(g);
-   		// p.update();
+   		 p.update();
    	 }
  	 c.draw(g);
  	 c.Update();

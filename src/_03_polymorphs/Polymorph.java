@@ -15,8 +15,8 @@ public abstract class Polymorph {
     }
     
     public void update(){
-   	int speed = 10;
-    	setX(getX() + speed);
+  // 	int speed = 10;
+   // 	setX(getX() + speed);
     }
     
     public abstract void draw(Graphics g);
