@@ -19,6 +19,7 @@ public class PolymorphWindow extends JPanel implements ActionListener{
     private Timer timer;
     circleMorph c = new circleMorph(450,300);
     ArrayList<Polymorph> polymorphs = new ArrayList<Polymorph>();
+    buttonMorph trigger = new buttonMorph(125, 125);
     
     public static void main(String[] args) {
    	 new PolymorphWindow().buildWindow();
@@ -30,13 +31,14 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 window.getContentPane().setPreferredSize(new Dimension(500, 500));
    	 window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    	 window.pack();
+   	 window.add(trigger.button);
    	 window.setVisible(true);
    	polymorphs.add(new imageMorph(55,55));
    	 polymorphs.add(new BluePolymorph(50, 50));
 	 polymorphs.add(new RedMorph(25, 25));
 	 polymorphs.add(new MovingMorph(75,75));
      polymorphs.add(new mousePolymorph(25,25));
-     polymorphs.add(new buttonMorph(125,125));
+     polymorphs.add(trigger);
    	 timer = new Timer(1000 / 30, this);
    	 timer.start();
     }

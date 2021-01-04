@@ -37,7 +37,7 @@ public class buttonMorph extends Polymorph implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource() == button) {
-			System.out.println("e");
+			JOptionPane.showMessageDialog(null, "virus detected");
 		}
 	}
 
