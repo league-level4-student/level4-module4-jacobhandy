@@ -32,7 +32,7 @@ public class Hospital extends ArrayList<Object>{
 		// TODO Auto-generated method stub
 		int index = 0;
 		for(Patient p : getPatients()) {
-			
+		
 			
 			try {
 				Doctor d = getDoctors().get(index);
