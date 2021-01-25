@@ -5,30 +5,56 @@ import java.util.List;
 
 public class Hospital extends ArrayList<Object>{
 
+	
+		
+	private ArrayList<Doctor> doctors = new ArrayList<Doctor>();
+	private ArrayList<Patient> patients = new ArrayList<Patient>();
+	
 	public void addDoctor(Doctor d) {
-		add(d);
+		doctors.add(d);
 	}
 
 	public void addPatient(Patient p) {
-		add(p);
+		patients.add(p);
 	}
 	
-	public ArrayList<Object> getDoctors() {
+	public ArrayList<Doctor> getDoctors() {
 		// TODO Auto-generated method stub
-		return this;
+		return doctors;
 	}
 
-	public ArrayList<Object> getPatients() {
+	public ArrayList<Patient> getPatients() {
 		// TODO Auto-generated method stub
-		return this;
+		return patients;
 	}
 
 	public void assignPatientsToDoctors() {
 		// TODO Auto-generated method stub
+		int index = 0;
+		for(Patient p : getPatients()) {
+			
+			
+			try {
+				Doctor d = getDoctors().get(index);
+				
+				if(d.size() >= 3) {
+				index++;
+				System.out.println(patients.size());
+				d = getDoctors().get(index);
+				}
+				((Doctor) d.getPatients()).assignPatient(p);
+			} catch (DoctorFullException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			}
+			}
 		
 	}
+	
+
 
 
 	
 
-}
+
